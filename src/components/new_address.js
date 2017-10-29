@@ -25,8 +25,8 @@ class NewAddress extends Component {
         return $.ajax({
             type: 'POST',
             url: url,
-            // dataType: 'jsonp', //todo: convert to get
             crossDomain: true,
+            headers: { 'Access-Control-Allow-Origin': '*' },
             data: {
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,

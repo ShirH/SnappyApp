@@ -4,12 +4,14 @@ var express = require('express'),
     mongoose = require('mongoose'),
     Task = require('./api/models/snappyModel'), //created model loading here
     bodyParser = require('body-parser');
+    cors = require('cors')
+
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/snappy');
 
-
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
