@@ -3,7 +3,7 @@
     > Downloud this repository
     
     for starting client:
-    > cd webApp
+    > cd SnappyApp
 	> npm install
 	> npm start
 	
