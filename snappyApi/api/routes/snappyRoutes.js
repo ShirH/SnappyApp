@@ -6,4 +6,8 @@ module.exports = function(app) {
         .get(snappy.list_all_orders)
         .post(snappy.create_a_order)
         .delete(snappy.delete_all);
+
+    app.route('/validate')
+        .get(snappy.get_address_validation)
+
 };

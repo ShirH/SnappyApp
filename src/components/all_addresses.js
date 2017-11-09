@@ -22,7 +22,8 @@ class AllAddresses extends Component {
             success: this.setOrders.bind(this)
         });
     }
-    setOrders(data){
+
+    setOrders(data) {
         this.setState({
             orders: data
         });
@@ -31,18 +32,16 @@ class AllAddresses extends Component {
     renderOrders() {
         return this.state.orders.map((order, index) => {
             return (
-                <li className="list-group-item" key={index}>
-                    <div>
-                        <span className="col-md-1">{order.firstName}</span>
-                        <span className="col-md-1">{order.lastName}</span>
-                        <span className="col-md-3">{order.address}</span>
-                        <span className="col-md-1">{order.city}</span>
-                        <span className="col-md-1">{order.zip}</span>
-                        <span className="col-md-1">{order.email}</span>
-                        <span className="col-md-1">{order.phone}</span>
-                        <span className="col-md-3">{order.notes}</span>
-                    </div>
-                </li>
+                <tr key={index}>
+                    <td>{order.firstName}</td>
+                    <td>{order.lastName}</td>
+                    <td >{order.address}</td>
+                    <td>{order.city}</td>
+                    <td>{order.zip}</td>
+                    <td>{order.email}</td>
+                    <td>{order.phone}</td>
+                    <td >{order.notes}</td>
+                </tr>
             );
         });
     }
@@ -51,21 +50,21 @@ class AllAddresses extends Component {
         return (
             <div>
                 <h3>All Orders</h3>
-                <ul className="list-group">
-                    <li className="list-group-item">
-                        <div>
-                            <span className="col-md-1">First Name</span>
-                            <span className="col-md-1">Last Name</span>
-                            <span className="col-md-3">Address</span>
-                            <span className="col-md-1">City</span>
-                            <span className="col-md-1">Zip</span>
-                            <span className="col-md-1">Email</span>
-                            <span className="col-md-1">Phone</span>
-                            <span className="col-md-3">Notes</span>
-                        </div>
-                    </li>
+                <table>
+                    <thead>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Address</td>
+                    <td>City</td>
+                    <td>Zip</td>
+                    <td>Email</td>
+                    <td>Phone</td>
+                    <td>Notes</td>
+                    </thead>
+                    <tbody>
                     {this.renderOrders()}
-                </ul>
+                    </tbody>
+                </table>
             </div>
         );
     }
